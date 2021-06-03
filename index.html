@@ -1,1 +1,86 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>demo</title><link href="/js/about.09e649d0.js" rel="prefetch"><link href="/css/app.877a64de.css" rel="preload" as="style"><link href="/js/app.243e8cb8.js" rel="preload" as="script"><link href="/js/chunk-vendors.07e33b1d.js" rel="preload" as="script"><link href="/css/app.877a64de.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but demo doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/js/chunk-vendors.07e33b1d.js"></script><script src="/js/app.243e8cb8.js"></script></body></html>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>happy birthday to belle</title>
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="js/jquery.js"></script>
+  <script src="js/garden.js"></script>
+  <script src="js/functions.js"></script>
+</head>
+<body>
+  <div id="mainDiv">
+    <div id="content1">
+      <div id="code">
+        <span class="comments bb1">super belle：</span><br />
+        <span class="comments">
+          On the occasion of your birthday, I will give you happy notes as a gift. I wish you 365 beautiful days. I sincerely wish you a happy birthday! Here I sincerely offer three wishes: I wish you good health; I wish you happiness; Wish you all the best!
+        </span><br /><br />
+        <span class="comments">
+          Send you a birthday cake, wish you a happy birthday! The first layer, considerate! Second, care! Third, romance! The fourth floor, warm! Middle sandwich, sweet! I wish you a good mood every day!
+        </span><br />
+        <br><br>
+        <span class="comments"><b class="bb">by micky</b></span>
+      </div>
+      <div id="loveHeart">
+        <canvas id="garden"></canvas>
+        <div id="words">
+          <div id="messages">
+            <img src="images/zsr.png">
+          </div>
+          <div id="loveu">
+            <img src="images/sr.png">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="copyright1">
+      <audio id="mp3" autoplay="autoplay" loop src="./mp3/Beautiful In White.mp3"></audio>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var offsetX = $("#loveHeart").width() / 2;
+    var offsetY = $("#loveHeart").height() / 2 - 55;
+    var together = new Date();
+    together.setHours(8);
+    together.setMinutes(0);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
+    
+    if (!document.createElement('canvas').getContext) {
+      var msg = document.createElement("div");
+      msg.id = "errorMsg";
+      msg.innerHTML = "您的浏览器已经过时!请使用非IE浏览器进行预览"; 
+      document.body.appendChild(msg);
+      $("#code").css("display", "none")
+      $("#copyright").css("position", "absolute");
+      $("#copyright").css("bottom", "10px");
+        document.execCommand("stop");
+    } else {
+      setTimeout(function () {
+        startHeartAnimation();
+      }, 5000);
+
+      timeElapse(together);
+      setInterval(function () {
+        timeElapse(together);
+      }, 500);
+
+      adjustCodePosition();
+      $("#code").typewriter();
+    }
+
+    function musicAutoPlay(){
+      let music = document.getElementById('mp3')//获取audio
+      if (music.paused) {//判断一下paused（pused为真是禁用的）
+        music.play()//调用播放
+      }
+    }
+    setInterval("musicAutoPlay()", 10);//必须使用一个时间函数 ，不触发的情况下还是报错
+
+
+  </script>
+</body>
+</html>
