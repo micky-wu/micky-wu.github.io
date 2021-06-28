@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>日记</title>
+  <style>
+    .detail {
+      width: 100%;
+      height: 100%;
+    }
+    .detail .item {
+      border-bottom: 1px solid #ccc;;
+    }
+    .detail .item .time {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .detail .item .cont {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <div class="detail">
+   
+  </div>
+
+  <script>
+    let arr = [
+      {
+        time:'2020-05-03',
+        cont:'sdfasfdasdfasdfsad',
+      },
+      {
+        time:'2020-05-10',
+        cont:'sdfasfdasdfasdfsad',
+      },
+      {
+        time:'2020-05-17',
+        cont:'sdfasfdasdfasdfsad',
+      },
+      {
+        time:'2020-05-24',
+        cont:'sdfasfdasdfasdfsad',
+      },
+      {
+        time:'2020-05-31',
+        cont:'sdfasfdasdfasdfsad',
+      },
+      {
+        time:'2020-06-07',
+        cont:'sdfasfdasdfasdfsad',
+      },
+      {
+        time:'2020-06-14',
+        cont:'sdfasfdasdfasdfsad',
+      },
+      {
+        time:'2020-06-21',
+        cont:'sdfasfdasdfasdfsad',
+      },
+      {
+        time:'2020-06-28',
+        cont:'今天独自去看病，了解到了没有你的陪伴是多孤单。<br/>幸好还有你',
+      },
+      {
+        time:'2020-07-05',
+        cont:'sdfasfdasdfasdfsad',
+      },
+      {
+        time:'2020-07-12',
+        cont:'sdfasfdasdfasdfsad',
+      },
+      {
+        time:'2020-07-19',
+        cont:'sdfasfdasdfasdfsad',
+      },
+    ]
+    let box = document.querySelector('.detail')
+    let str = `<div id="index" style="cursor: pointer;margin-bottom:20px;color:pink">祝福</div>`
+    arr.forEach(item=>{
+      str += `
+      <div class="item">
+        <div class="time">${item.time}</div>
+        <div class="cont">${item.cont}</div>
+      </div>
+      `
+    })
+    box.innerHTML += str
+    let ele = document.querySelector('#index')
+    ele.addEventListener('click',e=>{
+      window.location.href =  './index.html'
+    })
+  </script>
+</body>
+</html>

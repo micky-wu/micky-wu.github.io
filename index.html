@@ -12,6 +12,7 @@
 </head>
 <body>
   <div id="mainDiv">
+    <span id="detail" style="cursor: pointer;">日记</span>
     <div id="content1">
       <div id="code">
         <span class="comments bb1">super belle：</span><br />
@@ -80,6 +81,11 @@
     }
     setInterval("musicAutoPlay()", 10);//必须使用一个时间函数 ，不触发的情况下还是报错
 
+
+      let ele = document.querySelector('#detail')
+      ele.addEventListener('click',e=>{
+        window.location.href =  './detail.html'
+      })
 
   </script>
 </body>
